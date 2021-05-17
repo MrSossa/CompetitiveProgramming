@@ -1,1 +1,1 @@
-Personal competitive programming repository
+competitive programming repository
