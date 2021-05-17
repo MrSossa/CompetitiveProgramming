@@ -1,1 +1,1 @@
-competitive programming repository
+Cp repository
