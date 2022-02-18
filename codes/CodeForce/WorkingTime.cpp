@@ -79,12 +79,32 @@ void read_fast(){
 */
 
 void solve(){
-	
+	int n,m,tMinutes=0;
+    string s,e;
+    cin >> n >> m;
+    while (n--){
+        int start,end;
+        start = end = 0;
+        cin >> s >> e;
+        start += ((int)s[0]*10)*60;
+        start += (int)s[1]*60;
+        start += (int)s[3]*10;
+        start += (int)s[4];
+
+        end += ((int)e[0]*10)*60;
+        end += (int)e[1]*60;
+        end += (int)e[3]*10;
+        end += (int)e[4];
+        tMinutes += (end-start);
+    }
+    if (tMinutes/60 >= m) cout << "YES\n";
+    else cout << "NO\n";
 }
 
 int main(){
 	read_fast();
 	int t = 1;
+    cin >> t;
 	cases(t){
 		solve();
 	}

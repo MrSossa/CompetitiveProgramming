@@ -79,7 +79,28 @@ void read_fast(){
 */
 
 void solve(){
-	
+    int t;cin >> t;
+    for1(j,t){
+        int n,parity=0,oddIndex=30,ans=0;
+        cin >> n;
+        vector<int> arr(n);
+        forn(i,n){
+            cin >> arr[i];
+            parity = parity ^ arr[i];
+        }
+        forn(i,31){
+            if ((parity>>30-i) & 1) {
+                oddIndex = 30-i;
+                break;
+            }
+        }
+        forn(i,n){
+            if ((arr[i] >> oddIndex) & 1){
+                ans++;
+            }
+        }
+        cout << "Case " << j << ": " <<ans << "\n";
+    }
 }
 
 int main(){

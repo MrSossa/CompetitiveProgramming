@@ -79,12 +79,44 @@ void read_fast(){
 */
 
 void solve(){
-	
+	int n;
+    cin >> n;
+    vector<int> p1(n);
+    vector<int> p2(n);
+    map<int,int> vis;
+    forn(i,n){
+        cin >> p1[i];
+    }
+    forn(i,n){
+        cin >> p2[i];
+    }
+    int i1,i2,ans;
+    i1 = i2 = ans = 0;
+    while (i2 < n || i1 < n){
+        if (vis[p1[i1]]!=1000000){
+            //if (p1[])
+            i1++;
+            ans++;
+            continue;
+        }
+        vis[p1[i1]] = 1000000;
+        if (p1[i1] != p2[i2] && !vis[p2[i2]]){
+            ans++;
+            vis[p2[i2]] = i2;
+            i2++;
+        }else {
+            i1++;
+            vis[p2[i2]] = i2;
+            i2++;
+        }
+    }
+    cout << ans << "\n";
 }
 
 int main(){
 	read_fast();
 	int t = 1;
+    cin >> t;
 	cases(t){
 		solve();
 	}

@@ -79,7 +79,17 @@ void read_fast(){
 */
 
 void solve(){
-	
+	int n;
+    string aux;
+    cin >> n;
+    n--;
+    cout << n;
+    aux = to_string(n);
+    reverse(aux.begin(),aux.end());
+    for1(i,aux.size()){
+        cout << aux[i];
+    }
+    cout << endl;
 }
 
 int main(){
