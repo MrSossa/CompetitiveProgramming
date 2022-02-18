@@ -79,24 +79,23 @@ void read_fast(){
 */
 
 void solve(){
-	string s;
-    int n;
+	ll n,aux;
     cin >> n;
-    cin >> s;
-    cin >> s;
-    forn(i,n){
-        if (s[i] == 'o'){
-            cout << "YES\n";
-            return;
+    ll sum = 0;
+    ll ans = 0;
+    while (n--){
+        cin >> aux;
+        sum += aux;
+        if (sum < 0){
+            ans = max(ans,abs(sum));
         }
     }
-    cout << "NO\n";
+    cout << ans << "\n";
 }
 
 int main(){
 	read_fast();
 	int t = 1;
-    cin >> t;
 	cases(t){
 		solve();
 	}
