@@ -1,3 +1,4 @@
 .vscode
 exec
 *.exe
+.DS_Store
